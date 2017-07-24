@@ -1,13 +1,31 @@
 <html>
   <head>
     <title>WelcomeToVR</title>
-    <style>body { margin: 0; }</style>
+    <style>
+        body {
+            margin: 0;
+        }
+        .webvr-polyfill-fullscreen-wrapper {
+            background: #000;
+        }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <script>
+        windowConfig = {
+          env: 'Development',
+          version: '1.0.0'
+        };
+      </script>
   </head>
   <body>
+    <div id="yolo"></div>
     <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
     <script src="./client.bundle?platform=vr"></script>
     <script>
+      WebVRConfig = {
+        // Flag to disabled the UI in VR Mode.
+        CARDBOARD_UI_DISABLED: true, // Default: false
+      };
       // Initialize the React VR application
       ReactVR.init(
         // When you're ready to deploy your app, update this line to point to
@@ -18,5 +36,6 @@
       );
     </script>
   </body>
+  <!--<script src="../test.vr.bundle?platform=vr"></script>-->
 </html>
 
